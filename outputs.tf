@@ -1,8 +1,7 @@
 output "properties" {
-  value = azurerm_virtual_network.main
+  value = {
+    vnet   = azurerm_virtual_network.main
+    subnet = azurerm_subnet.default
+    nsg    = azurerm_network_security_group.default
+  }
 }
-
-# Subnet output example
-# output "subnet" {
-#   value = module.virtual_network.properties["main"].subnet.*[0].id
-# }
